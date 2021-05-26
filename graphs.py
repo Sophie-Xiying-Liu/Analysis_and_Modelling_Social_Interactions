@@ -4,7 +4,7 @@ import numpy as np
 import networkx as nx
 
 
-class create_graph:
+class CreateGraph:
     
     def __init__(self):
         data = 'European_electricity_network.csv'
@@ -30,7 +30,7 @@ class create_graph:
         return G, labels
 
     
-class graphStats:
+class GraphStats:
     
     def calculate_degree_centrality(self, graph):
         dgc_key = []
@@ -40,7 +40,7 @@ class graphStats:
         dc = nx.degree_centrality(g)
         nx.set_node_attributes(g, dc, 'degree_cent')
         
-        degcent_sorted = sorted(dc.items(), key=operator.itemgetter(1), reverse=True)
+        degcent_sorted = sorted(dc.items(), key=itemgetter(1), reverse=True)
 
         for key, value in degcent_sorted:
             dgc_key.append(str(key))
